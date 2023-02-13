@@ -1,0 +1,48 @@
+
+
+//User function Template for Java
+
+class Solution
+{
+    ArrayList<Integer> commonElements(int A[], int B[], int C[], int n1, int n2, int n3) 
+    {
+        HashSet<Integer> a1 = new HashSet<>();
+
+        HashSet<Integer> a2 = new HashSet<>();
+
+        HashSet<Integer> a3 = new HashSet<>();
+
+        for(int i=0; i<A.length;i++){
+
+            a1.add(A[i]);
+
+        }
+
+        for(int i=0; i<B.length;i++){
+
+            a2.add(B[i]);
+
+        }
+
+        for(int i=0; i<C.length;i++){
+
+            a3.add(C[i]);
+
+        }
+
+        
+
+        a1.retainAll(a2);
+
+        a1.retainAll(a3);
+
+        
+
+        ArrayList<Integer> in = new ArrayList<>(a1);
+
+        Collections.sort(in);
+
+        return in;
+    }
+    
+}
